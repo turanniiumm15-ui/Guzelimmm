@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Her Evrende Seni Seviyorum, Mine</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f19;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 75, 110, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            color: #ff4b6e;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #message-box {
+            font-size: 18px;
+            min-height: 80px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #e0e0e0;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff4b6e;
+            animation: pulse 1s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.25); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌌 Evrensel Sevgi Simülasyonu 🌌</h1>
+        <div id="message-box">Sistemler taranıyor...</div>
+        <div class="heart">❤️</div>
+        <div style="margin-top: 20px; font-weight: bold; font-size: 22px; color: #ff4b6e;" id="final-name"></div>
+    </div>
+
+    <script>
+        const messages = [
+            "[Evren #001 - Bizim Evrenimiz]: Seni her anımda, her nefesimde seviyorum.",
+            "[Evren #042 - Galaksi Evreni]: Yıldızlar sönse bile sana olan sevgim parlamaya devam edecek.",
+            "[Evren #108 - Zaman Dönüştürücü]: Zamanı geriye sarsalar da yine sadece seni seçerdim.",
+            "[Evren #314 - Sonsuz Döngü]: Matematiksel olarak imkansız görünse de sevgimizin sonu yok.",
+            "[Evren #777 - Şans Evreni]: Milyarlarca ihtimal arasından seni bulmuş olmam en büyük şansım.",
+            "[Evren #999 - Paralel Boyut]: Hangi boyutta olursak olalım, kalplerimiz her zaman aynı ritimde atıyor."
+        ];
+
+        let index = 0;
+        const box = document.getElementById("message-box");
+        const finalName = document.getElementById("final-name");
+
+        function showMultiverse() {
+            if (index < messages.length) {
+                box.innerHTML = messages[index];
+                index++;
+                setTimeout(showMultiverse, 3000);
+            } else {
+                box.innerHTML = ">>> HER EVRENDE, HER İHTİMALDE, HER ZAMAN... <<<";
+                finalName.innerHTML = "SENİ ÇOK SEVİYORUM MİNE!";
+            }
+        }
+
+        setTimeout(showMultiverse, 1500);
+    </script>
+</body>
+</html>
